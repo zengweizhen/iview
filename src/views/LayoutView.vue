@@ -2,7 +2,7 @@
     <div class="layout-warpper">
         <Layout class="layout-out">
           <!-- 最侧菜单 collapsible 表示是否可以收起 -->
-            <Sider class="sider-class" :hide-trigger="true"  :collapsible="true" v-model="isCollapsed">
+            <Sider :class="silderClass" :hide-trigger="true"  :collapsible="true" v-model="isCollapsed">
               <SilderMenu
               :isCollapsed="isCollapsed"
               @clickMenuAction="clickMenuAction"
@@ -45,7 +45,7 @@ export default {
       dataList: [
         {
           title: '1',
-          name: 'menu111',
+          name: 'menu666',
           icon: 'ios-people',
           children: [
             {
@@ -85,18 +85,23 @@ export default {
         },
         {
           title: '4',
-          name: 'menu444',
+          name: 'recursion',
           icon: 'ios-football',
           children: [
             { title: '4-1', name: 'menu444-111', icon: 'ios-paper' },
             { title: '4-2', name: 'menu444-222', icon: 'ios-paper' },
-            { title: '4-3', name: 'menu444-333', icon: 'ios-paper' }
+            { title: '4-3', name: 'home', icon: 'ios-paper' }
           ]
         },
         {
           title: '5',
-          name: 'menu555',
+          name: 'about',
           icon: 'ios-people'
+        },
+        {
+          title: '6',
+          name: 'table',
+          icon: 'ios-football'
         }
       ]
     }
@@ -112,6 +117,11 @@ export default {
       return [
         this.isCollapsed ? 'collapsed-menu' : ''
       ]
+    },
+    silderClass () {
+      return [
+        this.isCollapsed ? 'sider-class' : 'sider-class-open'
+      ]
     }
   },
 
@@ -122,8 +132,8 @@ export default {
      * @param {*} key
      */
     clickMenuAction (key) {
-      const name = key
-      console.log(name)
+      const path = key
+      this.$router.push(path)
     },
 
     // 展开事件
@@ -187,8 +197,14 @@ export default {
 .sider-class {
     width: 30%;
     height: 100%;
-    background-color: #d7dde4;
-    // overflow: auto
+    background-color: #515a6e;
+}
+
+.sider-class-open {
+    width: 30%;
+    height: 100%;
+    background-color: #515a6e;
+    overflow: auto,
 }
 
 .layout-inside {
@@ -207,9 +223,10 @@ export default {
 
 .content-class {
     width: 100%;
-    height: 100%;
+    height: calc(100vh - 30px - 64px);
     background-color: #fff;
     padding: 15px;
+    overflow: auto
 }
 
 .rotate-icon{
@@ -224,5 +241,8 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
+ }
+ ::v-deep .ivu-menu {
+  background: #515a6e;
  }
 </style>

@@ -1,7 +1,7 @@
 
 <template>
 <div>
-  <Menu theme="light" width="auto" @on-select="handelClick">
+  <Menu theme="dark" width="auto" @on-select="handelClick">
     <slot name="logo"></slot>
     <div v-show="!isCollapsed">
       <template  v-for="item in menuList" :key="`menu-${item.title}`">

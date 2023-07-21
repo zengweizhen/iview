@@ -3,6 +3,7 @@ import HomeView from '../views/HomeView.vue'
 import LayoutView from '../views/LayoutView.vue'
 import AboutView from '../views/AboutView.vue'
 import RecursionView from '../views/RecursionView'
+import TableView from '../views/TableView'
 
 const routes = [
   {
@@ -25,15 +26,20 @@ const routes = [
         path: '/recursion',
         name: 'RecursionView',
         component: RecursionView
+      },
+      {
+        path: '/table',
+        name: 'TableView',
+        component: TableView
       }
     ]
-  },
-
-  {
-    path: '/recursion',
-    name: 'RecursionView',
-    component: RecursionView
   }
+
+  // {
+  //   path: '/recursion',
+  //   name: 'RecursionView',
+  //   component: RecursionView
+  // }
 ]
 
 const router = createRouter({
