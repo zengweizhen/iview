@@ -4,6 +4,7 @@ import LayoutView from '../views/LayoutView.vue'
 import AboutView from '../views/AboutView.vue'
 import RecursionView from '../views/RecursionView'
 import TableView from '../views/TableView'
+import TreeView from '../views/TreeView'
 
 const routes = [
   {
@@ -31,6 +32,11 @@ const routes = [
         path: '/table',
         name: 'TableView',
         component: TableView
+      },
+      {
+        path: '/tree',
+        name: 'TreeView',
+        component: TreeView
       }
     ]
   }

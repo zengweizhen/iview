@@ -88,8 +88,8 @@ export default {
           name: 'recursion',
           icon: 'ios-football',
           children: [
-            { title: '4-1', name: 'menu444-111', icon: 'ios-paper' },
-            { title: '4-2', name: 'menu444-222', icon: 'ios-paper' },
+            { title: '4-1', name: 'recursion', icon: 'ios-paper' },
+            { title: '4-2', name: 'tree', icon: 'ios-paper' },
             { title: '4-3', name: 'home', icon: 'ios-paper' }
           ]
         },
